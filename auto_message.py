@@ -1,6 +1,7 @@
 import pyautogui
 import time
 
+#It will start functioning 5 seconds after you run the code. You can modify it.
 time.sleep(5)
 
 #Edit the message to be written in the pyautogui.message('') section yourself.

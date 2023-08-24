@@ -1,15 +1,24 @@
 import pyautogui
 import time
 
-#It will start functioning 5 seconds after you run the code. You can modify it.
-time.sleep(5)
+def send_Message(message):
+    try:
+        pyautogui.write(message)
+        pyautogui.press('enter')
+    except Exception as e:
+        print("Hata oluştu:", e)
 
-#Edit the message to be written in the pyautogui.message('') section yourself.
-def send_Message():
-    pyautogui.write("Message")
-    pyautogui.press('enter')
+def main():
+    try:
+        # It will start functioning 5 seconds after you run the code. You can modify it.
+        time.sleep(5)
 
-while True:
-    send_Message()
-    time.sleep(0)
-    #You can modify the (time.sleep()) part to change the time intervals of message delivery.
+        message = input("Göndermek istediğiniz mesajı girin: ")
+        while True:
+            send_Message(message)
+            time.sleep(0)  # You can modify the time interval between messages.
+    except KeyboardInterrupt:
+        print("\nUygulama kullanıcı tarafından durduruldu.")
+
+if __name__ == "__main__":
+    main()
